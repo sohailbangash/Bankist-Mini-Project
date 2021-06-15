@@ -143,22 +143,21 @@ const displayData = function(acc, sort = false) {
 
         // this is another array 
         
-        const date = new Date(acc.movementsDates[i]);
-      
-        console.log(date);
+        const date =new Date(acc.movementsDates[i]);
+        console.log(acc.movementsDates[i]);
+        
+        console.log(date);   
         
         const days = `${date.getDate()}` .padStart(2, 0);
-        const months = `${date.getMonth()}` .padStart(2, 0);
-        const years = date.getFullYear();
-        const displayDate = `${days}/${months}/${years}`;
-        console.log(displayDate);
+        // const months = `${date.getMonth()}` .padStart(2, 0);
+        // const years = date.getFullYear();
+        // const displayDate = `${days}/${months}/${years}`;
+        // console.log(displayDate);
         
         const html = `
        <div class="movements__row">
                 <div class="movements__type movements__type--${type}">
                    ${i + 1} ${type}</div>
-
-                <div class="movements__value">${mov} Rs</div>
 
                   
                 <div class="movements__value">${mov.toFixed(2)} Rs</div>
@@ -241,12 +240,12 @@ const UpdateUI = function(acc) {
 let currentAccount;
 
 
-=======
+
 // ! FAKE ALWAYS LOGIN\
 
-// currentAccount= account1;
-// UpdateUI(currentAccount);
-// containerApp.style.opacity = 100;
+currentAccount= account1;
+UpdateUI(currentAccount);
+containerApp.style.opacity = 100;
 
 
 btnLogin.addEventListener('click', function(e) {
@@ -323,8 +322,6 @@ btnTransfer.addEventListener('click', function(e) {
          currentAccount.movementsDates.push(new Date().toISOString());
          receiveAcc.movementsDates.push(new Date().toISOString());
 
-
-)
         if (debit) {
             labelMessage.textContent = `${amount} Money Have been Transfer to ${receiveAcc.owner.toUpperCase()} (${
         receiveAcc.username
