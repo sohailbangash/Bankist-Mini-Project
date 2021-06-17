@@ -38,6 +38,50 @@ const days1 = calDaysPassed(new Date(2037, 3, 4), new Date(2037, 3,14));
 console.log(days1);
 
 
+// Time Server 
+
+
+// setTimeout((ingt1, ingt2) => console.log(`Here is your ${ingt1} Piza 🍕`)
+// , 3000,
+// 'olive',
+// 'spinch');
+
+// console.log('wating...');
+
+
+const ingte = ['olive', 'spinch'];
+const timer = setTimeout(
+  (ingt1, ingt2) => console.log(`Here is your ${ingt1} Piza 🍕`),
+  3000,
+   ...ingte
+);
+
+if(ingte.includes('spinch')) clearTimeout(timer);
+
+console.log('wating...');
+
+
+
+// set time out
+
+setInterval(() => {
+  const now = new Date();
+  const hour = now.getHours();
+  const minute = now.getMinutes();
+   const second = now.getSeconds();
+
+  
+  console.log(`${hour}: ${minute}:: ${second}`);
+  // const now = new Date();
+  // const day = `${now.getDate()}` .padStart(2, 0);
+  // const month = `${now.getMonth()}` .padStart(2, 0);
+  // const year = now.getFullYear();
+  // const hour = now.getHours();
+  // const minute = now.getMinutes();
+  // labelDate.textContent = `${day}/${month}/${year},
+  // ${hour}:${minute}`;
+}, 1000);
+
 
 // const formatMovementsDate = function(date){
     
